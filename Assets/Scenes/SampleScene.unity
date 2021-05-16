@@ -232,7 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4a504fd8e4a3545bfc599070d09ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocidade: 10
+  Velocity: 100
+  JumpForce: 7
 --- !u!54 &42818043
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ GameObject:
   - component: {fileID: 436051660}
   - component: {fileID: 436051659}
   - component: {fileID: 436051658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +450,7 @@ GameObject:
   - component: {fileID: 800222414}
   - component: {fileID: 800222413}
   - component: {fileID: 800222412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

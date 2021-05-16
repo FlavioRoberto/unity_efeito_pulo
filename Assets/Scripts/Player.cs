@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
+using Enums;
 
 public class Player : MonoBehaviour
 {
+    public float Velocity;
+    public float JumpForce;
     private Rigidbody _rigidBody;
-    public float Velocidade = 10;
+    private bool _inFloor;
+
+    public Player()
+    {
+        Velocity = 10;
+        JumpForce = 10;
+    }
 
     private void Start()
     {
@@ -12,9 +21,32 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Move();
+        Jump();
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == (int)ELayer.FLOOR)
+            _inFloor = true;
+    }
+
+    private void Move()
+    {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            _rigidBody.velocity = Vector3.right * Velocidade * Time.deltaTime;
+            _rigidBody.AddForce(Vector3.right * Velocity * Time.deltaTime, ForceMode.Acceleration);
+        }
+    }
+
+    private void Jump()
+    {
+        var canJump = Input.GetKeyDown(KeyCode.Space) && _inFloor;
+
+        if (canJump)
+        {
+            _inFloor = false;
+            _rigidBody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         }
     }
 }
