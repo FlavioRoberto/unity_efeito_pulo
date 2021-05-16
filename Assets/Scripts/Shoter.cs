@@ -23,7 +23,7 @@ namespace Assets.Scripts
             {
                 var bulletInstance = Instantiate(Bullet);
                 bulletInstance.transform.position = ShotPoint.transform.position;
-                bulletInstance.GetComponent<Bullet>().Shoot();
+                bulletInstance.GetComponent<Bullet>().Shoot(transform);
             }
         }
     }

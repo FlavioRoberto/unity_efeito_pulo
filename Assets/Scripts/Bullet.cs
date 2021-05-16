@@ -12,7 +12,7 @@ namespace Assets.Scripts
             Velocity = 100;
         }
 
-        public void Shoot()
+        public void Shoot(Transform transform)
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Velocity, ForceMode.Impulse);
         }
