@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/JumpEfect.unity
+    guid: 7baa2168552f7c341a813eb97aecee0d
+  - enabled: 1
+    path: Assets/Scenes/BulletEfect.unity
+    guid: 483daef10a99abd4ea4f16ef60a95d63
   m_configObjects: {}
