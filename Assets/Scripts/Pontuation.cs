@@ -1,20 +1,27 @@
 ﻿using Assets.Scripts.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
     public class Pontuation : MonoBehaviour, IActionColider
     {
-        public int Score;
+        private int _score;
+        public Text Score;
 
         public Pontuation()
         {
-            Score = 0;
+            _score = 0;
+        }
+
+        private void Update()
+        {
+            Score.text = $"X {_score}";
         }
 
         public void Colision()
         {
-            Score += 10;
+            _score += 1;
         }
     }
 }
