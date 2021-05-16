@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        VerifyInFloor(collision);
+    }
+
+    private void VerifyInFloor(Collision collision)
+    {
         if (collision.gameObject.layer == (int)ELayer.FLOOR)
             _inFloor = true;
     }
